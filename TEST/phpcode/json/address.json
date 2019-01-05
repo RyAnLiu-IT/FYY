@@ -1,0 +1,102 @@
+{
+    "fields": [
+        {
+            "name": "uid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "first_name",
+            "type": "string"
+        },
+        {
+            "name": "surname",
+            "type": "string"
+        },
+        {
+            "name": "phone",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "title",
+            "type": "select",
+            "options": {
+                "mr": "Mr",
+                "miss": "Miss",
+                "ms": "Ms"
+            }
+        },
+        {
+            "name": "street_address_1",
+            "type": "string"
+        },
+        {
+            "name": "street_address_2",
+            "type": "string"
+        },
+        {
+            "name": "city",
+            "type": "string"
+        },
+        {
+            "name": "state",
+            "type": "string"
+        },
+        {
+            "name": "zip_code",
+            "type": "string"
+        },
+        {
+            "name": "country",
+            "type": "select",
+            "options": {
+                "hk": "Hong Kong",
+                "mu": "Macau"
+            }
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "uid",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+	{
+            "field": "uid",
+            "rules": "required"
+        },
+        {
+            "field": "first_name",
+            "rules": "required|max:200|min:2"
+        },
+        {
+            "field": "surname",
+            "rules": "required|max:200|min:2"
+        },
+        {
+            "field": "phone",
+            "rules": "required|min:8"
+        },
+	{
+            "field": "street_address_1",
+            "rules": "required"
+        },
+	{
+            "field": "city",
+            "rules": "required"
+        },
+	{
+            "field": "country",
+            "rules": "required"
+        }
+    ]
+}

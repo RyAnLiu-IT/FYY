@@ -1,0 +1,55 @@
+# Translations template for PROJECT.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-12-20 13:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: templates/serviceDoctor.html:40
+msgid "Home"
+msgstr ""
+
+#: templates/serviceDoctor.html:41 templates/serviceDoctor.html:90
+msgid "About"
+msgstr ""
+
+#: templates/serviceDoctor.html:42
+msgid "Services"
+msgstr ""
+
+#: templates/serviceDoctor.html:43
+msgid "Contact us"
+msgstr ""
+
+#: templates/serviceDoctor.html:44 templates/serviceDoctor.html:98
+msgid "Sign In"
+msgstr ""
+
+#: templates/serviceDoctor.html:72
+msgid "Doctor Search"
+msgstr ""
+
+#: templates/serviceDoctor.html:76
+msgid "No results. Try another search term."
+msgstr ""
+
+#: templates/serviceDoctor.html:77
+msgid "Getting results..."
+msgstr ""
+
+#: templates/serviceDoctor.html:94
+msgid "Contact Us"
+msgstr ""
+

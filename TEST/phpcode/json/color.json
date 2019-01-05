@@ -1,0 +1,24 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        }
+    ],
+    "foreign_keys": [
+
+    ],
+    "relationships": [
+        {
+            "name": "product",
+            "type": "belongsToMany",
+            "class": "App\\Product"
+        }
+    ],
+    "validations": [
+    {
+            "field": "name",
+            "rules": "required"
+        }
+]
+}

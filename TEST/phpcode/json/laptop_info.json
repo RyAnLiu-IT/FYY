@@ -1,0 +1,85 @@
+{
+  "fields": [
+    {
+      "name": "pid",
+      "type": "integer#unsigned#unique"
+    },
+    {
+      "name": "tid",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "processor",
+      "type": "string"
+    },
+    {
+      "name": "operating_system",
+      "type": "string"
+    },
+    {
+      "name": "memory",
+      "type": "string"
+    },
+    {
+      "name": "storage",
+      "type": "string"
+    },
+    {
+      "name": "display_resolution_width",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "display_resolution_length",
+      "type": "integer#unsigned"
+    }
+  ],
+  
+  "foreign_keys": [
+    {
+      "column": "pid",
+      "references": "id",
+      "on": "products",
+      "onDelete": "cascade"
+    },
+    {
+      "column": "tid",
+      "references": "tid",
+      "on": "products",
+      "onDelete": "cascade"
+    }
+  ],
+  
+  "relationships": [
+    {
+      "name": "product",
+      "type": "belongsTo",
+      "class": "App\\Product"
+    }
+  ],
+  "validations": [
+    {
+      "field": "pid",
+      "rules": "required"
+    },
+    {
+      "field": "tid",
+      "rules": "required"
+    },
+    {
+      "field": "processor",
+      "rules": "required|min:1|max:50"
+    },
+     {
+      "field": "operating_system",
+      "rules": "required|min:10|max:50"
+    },
+    {
+      "field": "memory",
+      "rules": "required|min:1|max:100"
+    },
+    {
+      "field": "storage",
+      "rules": "required|min:1|max:100"
+    }
+  ]
+}

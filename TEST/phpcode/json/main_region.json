@@ -1,0 +1,26 @@
+{
+  "fields": [
+{
+"name": "name",
+"type": "string"
+}
+],
+  "relationships": [
+    {
+      "name": "areas",
+      "type": "hasMany",
+      "class": "App\\Address"
+    },
+    {
+      "name": "shops",
+      "type": "hasManyThrough",
+      "class": "App\\Shop_address, App\\Political_area"
+    }
+  ],
+    "validations": [
+    {
+    "field": "name",
+    "rules": "required|min:1|max:50"
+    }
+    ]
+}

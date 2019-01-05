@@ -1,0 +1,66 @@
+{
+  "fields": [
+    {
+      "name": "shop_address",
+      "type": "string"
+    },
+    {
+      "name": "phone",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "business_hours",
+      "type": "string"
+    },
+    {
+      "name": "mtr_station",
+      "type": "string"
+    },
+    {
+      "name": "paid",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+  {
+    "column": "paid",
+    "references": "id",
+    "on": "political_areas",
+    "onDelete": "cascade"
+  }
+],
+  "relationships": [
+    {
+      "name": "areas",
+      "type": "belongsTo",
+      "class": "App\\Political_area"
+    },
+    {
+      "name": "orders",
+      "type": "hasMany",
+      "class": "App\\Order"
+    }
+  ],
+  "validations": [
+    {
+      "field": "shop_address",
+      "rules": "required"
+    },
+    {
+      "field": "phone",
+      "rules": "required|min:8"
+    },
+    {
+      "field": "business_hours",
+      "rules": "required"
+    },
+    {
+      "field": "mtr_station",
+      "rules": "required|min:1|max:10"
+    },
+    {
+      "field": "paid",
+      "rules": "required"
+    }
+  ]
+}

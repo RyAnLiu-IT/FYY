@@ -1,0 +1,52 @@
+{
+    "fields": [
+        {
+            "name": "uid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "pid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "note",
+            "type": "string"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "uid",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "pid",
+            "references": "id",
+            "on": "products",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "product",
+            "type": "belongsTo",
+            "class": "App\\Product"
+        }
+    ],
+    "validations": [
+	{
+            "field": "uid",
+            "rules": "required"
+        },
+        {
+            "field": "pid",
+            "rules": "required"
+        }
+    ]
+}

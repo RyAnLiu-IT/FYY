@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Foundry>
+<VM>
+<VMId type="string">52 c5 3f 88 7e 8f dd f2-7c 90 9a 81 5b 7e 33 c3</VMId>
+<ClientMetaData>
+<clientMetaDataAttributes/>
+<HistoryEventList/></ClientMetaData>
+<vmxPathName type="string">photon-custom-lsilogic-hw11-2.0-304b817.vmx</vmxPathName></VM></Foundry>

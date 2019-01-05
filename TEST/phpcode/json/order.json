@@ -1,0 +1,111 @@
+{
+    "fields": [
+        {
+            "name": "uid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "pid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "aid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "qty",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "promotional_code",
+            "type": "string"
+        },
+	{
+            "name": "shipping_methods",
+            "type": "select",
+            "options": {
+                "delivery": "Delivery",
+                "shop": "Shop Pickup"
+            }
+        },
+        {
+            "name": "delivery_time_1",
+            "type": "date"
+        },
+        {
+            "name": "delivery_time_2",
+            "type": "date"
+        },
+        {
+            "name": "sid",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "uid",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "pid",
+            "references": "id",
+            "on": "products",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "sid",
+            "references": "id",
+            "on": "shop_addresses",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "product",
+            "type": "belongsTo",
+            "class": "App\\Product"
+        },
+        {
+            "name": "shop_address",
+            "type": "belongsTo",
+            "class": "App\\Shop_address"
+        }
+    ],
+    "validations": [
+	{
+            "field": "uid",
+            "rules": "required"
+        },
+        {
+            "field": "pid",
+            "rules": "required"
+        },
+        {
+            "field": "aid",
+            "rules": "required"
+        },
+	{
+            "field": "qty",
+            "rules": "required"
+        },
+	{
+            "field": "shipping_methods",
+            "rules": "required"
+        },
+        {
+            "field": "delivery_time_1",
+            "rules": "required"
+        },
+        {
+            "field": "delivery_time_2",
+            "rules": "required"
+        }
+    ]
+}

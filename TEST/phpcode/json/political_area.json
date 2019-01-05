@@ -1,0 +1,42 @@
+{
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "mgid",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "mgid",
+      "references": "id",
+      "on": "main_regions",
+      "onDelete": "cascade"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "regions",
+      "type": "belongsTo",
+      "class": "App\\Main_region"
+    },
+    {
+      "name": "shops",
+      "type": "hasMany",
+      "class": "App\\Shop_address"
+    }
+  ],
+  "validations": [
+    {
+      "field": "mgid",
+      "rules": "required"
+    },
+  {
+    "field": "name",
+    "rules": "required|min:1|max:20"
+  }
+  ]
+}

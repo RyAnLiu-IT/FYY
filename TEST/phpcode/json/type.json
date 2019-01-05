@@ -1,0 +1,33 @@
+{
+  "fields": [    {
+      "name": "name",
+      "type": "string"
+    }
+  ],
+  "foreign_keys": [
+    
+  ],
+  "relationships": [
+    {
+      "name": "product",
+      "type": "hasMany",
+      "class": "App\\Product"
+    },
+    {
+      "name": "printer",
+      "type": "hasManyThrough",
+      "class": "App\\Product, App\\Printer_info"
+    },
+    {
+      "name": "laptop",
+      "type": "hasManyThrough",
+      "class": "App\\Product, App\\Laptop_info"
+    }
+  ],
+  "validations": [
+    {
+      "field": "name",
+      "rules": "required|min:1|max:50"
+    }
+  ]
+}

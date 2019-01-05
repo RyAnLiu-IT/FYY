@@ -1,0 +1,138 @@
+{
+    "fields": [
+        {
+            "name": "broadway_code",
+            "type": "string#unique"
+        },
+        {
+            "name": "bid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "tid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "model",
+            "type": "string"
+        },
+        {
+            "name": "dimensions_W_mm",
+            "type": "number#unsigned"
+        },
+        {
+            "name": "dimensions_H_mm",
+            "type": "number#unsigned"
+        },
+        {
+            "name": "dimensions_D_mm",
+            "type": "number#unsigned"
+        },
+        {
+            "name": "net_weight",
+            "type": "double#unsigned"
+        },
+        {
+            "name": "description",
+            "type": "string"
+        },
+        {
+            "name": "keywords",
+            "type": "string"
+        },
+        {
+            "name": "place_of_origin",
+            "type": "string"
+        },
+        {
+            "name": "sales_territory",
+            "type": "string"
+        },
+        {
+            "name": "warranty_m",
+            "type": "number#unsigned"
+        },
+        {
+            "name": "special_feature",
+            "type": "string"
+        },
+        {
+            "name": "special_feature2",
+            "type": "string"
+        },
+        {
+            "name": "accessory",
+            "type": "string"
+        }
+
+    ],
+    "foreign_keys": [
+      {
+        "column": "bid",
+        "references": "id",
+        "on": "brands",
+        "onDelete": "cascade"
+      },
+      {
+        "column": "tid",
+        "references": "id",
+        "on": "types",
+        "onDelete": "cascade"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "brand",
+        "type": "belongsTo",
+        "class": "App\\Brand"
+      },
+      {
+        "name": "type",
+        "type": "belongsTo",
+        "class": "App\\Type"
+      },
+      {
+        "name": "color",
+        "type": "belongsToMany",
+        "class": "App\\Color"
+      }
+    ],
+    "validations": [
+      {
+            "field": "name",
+            "rules": "required"
+      },
+      {
+            "field": "bid",
+            "rules": "required"
+      },
+      {
+            "field": "tid",
+            "rules": "required"
+      },
+      {
+            "field": "broadway_code",
+            "rules": "required"
+      },
+      {
+            "field": "model",
+            "rules": "required"
+      },
+      {
+            "field": "net_weight",
+            "rules": "required"
+      },
+      {
+            "field": "place_of_origin",
+            "rules": "required"
+      },
+      {
+            "field": "sales_territory",
+            "rules": "required"
+      }
+    ]
+}

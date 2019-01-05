@@ -1,0 +1,41 @@
+{
+    "fields": [
+        {
+            "name": "pid",
+            "type": "integer#unsigned#unique"
+        },
+        {
+            "name": "price",
+            "type": "double#unsigned"
+        },
+        {
+            "name": "special",
+            "type": "double#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "pid",
+            "references": "id",
+            "on": "products",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "product",
+            "type": "belongsTo",
+            "class": "App\\Product"
+        }
+    ],
+    "validations": [
+    {
+        "field": "price",
+        "rules": "required"
+    },
+    {
+        "field": "pid",
+        "rules": "required"
+    }
+]
+}

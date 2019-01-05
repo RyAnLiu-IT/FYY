@@ -1,0 +1,123 @@
+{
+  "fields": [
+    {
+      "name": "pid",
+      "type": "integer#unsigned#unique"
+    },
+    {
+      "name": "tid",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "screen_display",
+      "type": "radio",
+      "options": {
+        "1": "Yes",
+        "0": "No"
+      }
+    },
+    {
+      "name": "auto_duplex_printing",
+      "type": "radio",
+      "options": {
+        "1": "Yes",
+        "0": "No"
+      }
+    },
+    {
+      "name": "print_resolution_length",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "print_resolution_width",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "max_number_of_copies",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "scanning_speed_sec",
+      "type": "double#unsigned"
+    },
+    {
+      "name": "scan_resolution_dpi",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "main_feature",
+      "type": "string"
+    }
+  ],
+  
+  "foreign_keys": [
+    {
+      "column": "pid",
+      "references": "id",
+      "on": "products",
+      "onDelete": "cascade"
+    },
+    {
+      "column": "tid",
+      "references": "tid",
+      "on": "products",
+      "onDelete": "cascade"
+    }
+  ],
+  
+  "relationships": [
+   {
+      "name": "product",
+      "type": "belongsTo",
+      "class": "App\\Product"
+    }
+  ],
+  
+  "validations": [
+    {
+      "field": "pid",
+      "rules": "required"
+    },
+    {
+      "field": "tid",
+      "rules": "required"
+    },
+    {
+      "field": "screen_display",
+      "rules": "required"
+    },
+    {
+      "field": "auto_duplex_printing",
+      "rules": "required"
+    },
+    {
+      "field": "print_resolution_length",
+      "rules": "required"
+    },
+    {
+      "field": "print_resolution_width",
+      "rules": "required"
+    },
+    {
+      "field": "print_resolution_length",
+      "rules": "required"
+    },
+    {
+      "field": "max_number_of_copies",
+      "rules": "required|min:1|max:10000"
+    },
+    {
+      "field": "scanning_speed_sec",
+      "rules": "required"
+    },
+    {
+      "field": "scan_resolution_dpi",
+      "rules": "required"
+    },
+    {
+      "field": "main_feature",
+      "rules": "required|min:10|max:100"
+    }
+
+  ]
+}

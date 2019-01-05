@@ -1,0 +1,25 @@
+{"fields": [
+  {
+    "name": "sid",
+    "type": "integer#unsigned#unique"
+  },
+  {
+    "name": "image",
+    "type": "file"
+  }
+],
+  "foreign_keys": [
+    {
+      "column": "sid",
+      "references": "id",
+      "on": "shop_addresses",
+      "onDelete": "cascade"
+    }],
+  "relationships": [
+    {
+      "name": "shops",
+      "type": "belongsTo",
+      "class": "App\\Shop_address"
+    }
+  ]
+}

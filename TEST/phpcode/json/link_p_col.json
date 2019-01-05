@@ -1,0 +1,47 @@
+{
+    "fields": [
+        {
+            "name": "pid",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "col_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "pid",
+            "references": "id",
+            "on": "products",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "col_id",
+            "references": "id",
+            "on": "colors",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "product",
+            "type": "belongsTo",
+            "class": "App\\Product"
+        },{
+        "name": "color",
+        "type": "belongsTo",
+        "class": "App\\Color"
+      }
+    ],
+    "validations": [
+    {
+        "field": "pid",
+        "rules": "required"
+    },
+        {
+            "field": "col_id",
+            "rules": "required"
+        }
+]
+}
